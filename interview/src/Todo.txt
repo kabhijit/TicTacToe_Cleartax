@@ -1,0 +1,48 @@
+UX
+===
+1. Messages passed to user can be improved at all places
+
+
+Bugs
+====
+1. We are able tto overwrite the moves already entered in a game
+
+
+Refactoring
+============
+
+Main class
+----------
+1. Can be moved to TicTacToe constructor from Main class.
+2. readInt / current input can be implemented as a Interface which can be implemented in other formats going forward.
+
+TicTacToe class
+---------------
+3. Access specifiers are not mentioned
+4. Could have been constructor
+5. GameState [single/Multiple] and based on the state contain player1, player2 instance
+and population of player2 can be randomplayer for SingleState whereas player2 can be manual for multiPlayer
+// Basically refactor step
+
+Board class
+-----------
+6. public void setMove() {
+   // write the validation logic
+   // populate the tile passed
+}
+// write a setter method which will write corresponding move, validating stuff like if already set with some value do not write
+7. public void setMoveAndDetermineWinner(Player player, int[][] tile) {
+   setMove();
+   // also check if there are any row / column / diagonal which matches the same mark and decllare as winner
+}
+8. other validation issues like what if we give some -ve tile index or out of bound tile index
+9. lot of method ownership issues like printBoard for example is in TicTacToe class rather than board class etc.
+
+
+Functionality
+=============
+1. No confirmation if you have won
+2. difficulty level
+
+
+
